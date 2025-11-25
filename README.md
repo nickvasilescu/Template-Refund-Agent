@@ -15,58 +15,143 @@ A beginner-friendly template for building **Computer Use Agents** - AI agents th
 
 **Start with CUA to get value fast, then optimize with APIs later.**
 
-## Quick Start (5 Steps)
+---
 
-### 1. Clone and Install
+## Prerequisites
+
+Before you begin, make sure you have the following installed on your computer:
+
+### 1. Git (for cloning the repository)
+
+**Check if installed:**
+```bash
+git --version
+```
+
+**Install if needed:**
+- **Mac:** Open Terminal and run `xcode-select --install`
+- **Windows:** Download from [git-scm.com](https://git-scm.com/download/win)
+- **Linux:** `sudo apt install git` (Ubuntu/Debian) or `sudo dnf install git` (Fedora)
+
+### 2. Python 3.8 or higher
+
+**Check if installed:**
+```bash
+python3 --version
+```
+
+**Install if needed:**
+- **Mac:** `brew install python` (if you have [Homebrew](https://brew.sh)) or download from [python.org](https://www.python.org/downloads/)
+- **Windows:** Download from [python.org](https://www.python.org/downloads/) (check "Add Python to PATH" during install!)
+- **Linux:** `sudo apt install python3 python3-pip python3-venv`
+
+### 3. A Code Editor (Recommended: Cursor)
+
+We recommend **Cursor** - an AI-powered code editor that makes working with this template even easier:
+- Download from [cursor.com](https://cursor.com)
+- It's free and works on Mac, Windows, and Linux
+- You can also use VS Code, PyCharm, or any text editor you prefer
+
+### 4. API Keys (Free to start)
+
+You'll need accounts with these services:
+
+| Service | Sign Up | Cost |
+|---------|---------|------|
+| **Orgo** | [orgo.ai](https://orgo.ai) | Free tier: 2 concurrent computers |
+| **Anthropic** | [console.anthropic.com](https://console.anthropic.com) | Pay as you go (~$0.10-0.50 per run) |
+
+---
+
+## Getting Started
+
+### Step 1: Clone this Repository
+
+Open your terminal (Mac/Linux) or Command Prompt (Windows) and run:
 
 ```bash
-cd "Stripe Refund Agent"
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+git clone https://github.com/YOUR_USERNAME/Template-Refund-Agent.git
+cd Template-Refund-Agent
+```
+
+> 💡 **Tip:** If you're using Cursor, you can open the terminal with `Ctrl+`` (backtick) or `Cmd+`` on Mac.
+
+### Step 2: Create a Virtual Environment
+
+This keeps your project's packages separate from other Python projects:
+
+```bash
+# Create the virtual environment
+python3 -m venv venv
+
+# Activate it
+# On Mac/Linux:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+```
+
+> ✅ You'll know it's working when you see `(venv)` at the start of your terminal prompt.
+
+### Step 3: Install Required Packages
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Get API Keys
+This installs:
+- `orgo` - Cloud desktop infrastructure
+- `anthropic` - Claude AI SDK
+- `python-dotenv` - Environment variable loader
 
-| Service | Link | Notes |
-|---------|------|-------|
-| **Orgo** | [orgo.ai](https://orgo.ai) | Cloud desktops - Free tier: 2 computers |
-| **Anthropic** | [console.anthropic.com](https://console.anthropic.com) | Claude AI - Pay as you go |
+### Step 4: Set Up Your Credentials
 
-### 3. Configure Credentials
+Create your environment file from the template:
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` with your values:
+Now open `.env` in your editor and fill in your values:
 
 ```env
-ORGO_API_KEY=your_orgo_key
-ANTHROPIC_API_KEY=your_anthropic_key
+# Required API Keys
+ORGO_API_KEY=your_orgo_api_key_here
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
 
+# Email Service (default: Zoho Mail)
 EMAIL_SERVICE_EMAIL=your_email@zoho.com
 EMAIL_SERVICE_PASSWORD=your_password
 
+# Payment Service (default: Stripe)
 PAYMENT_SERVICE_EMAIL=your_stripe_email
 PAYMENT_SERVICE_PASSWORD=your_stripe_password
 ```
 
-### 4. Test with Dry Run
+> ⚠️ **Security:** Never share your `.env` file or commit it to GitHub!
+
+### Step 5: Test with a Dry Run
+
+Before running for real, test that everything is connected:
 
 ```bash
 python cua_agent.py --dry-run --verbose
 ```
 
-This runs the workflow without actually clicking action buttons.
+This runs through the workflow without actually clicking any action buttons.
 
-### 5. Run for Real
+### Step 6: Run for Real
+
+Once your dry run succeeds:
 
 ```bash
 python cua_agent.py
 ```
 
-Watch the agent work at: `https://orgo-{computer_id}.orgo.dev`
+🎉 Watch the agent work at: `https://orgo-{computer_id}.orgo.dev`
+
+---
 
 ## Command Line Options
 
