@@ -1,0 +1,14 @@
+# CUA Template Dependencies
+# Install with: pip install -r requirements.txt
+
+# Orgo - Cloud desktop infrastructure for computer use agents
+# https://orgo.ai
+orgo>=0.0.32
+
+# Anthropic - Claude AI with computer use capabilities
+# https://docs.anthropic.com
+anthropic>=0.72.0
+
+# Python-dotenv - Load environment variables from .env file
+# https://pypi.org/project/python-dotenv/
+python-dotenv>=1.0.0
