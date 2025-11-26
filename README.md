@@ -70,7 +70,7 @@ You'll need accounts with these services:
 Open your terminal (Mac/Linux) or Command Prompt (Windows) and run:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Template-Refund-Agent.git
+git clone https://github.com/nickvasilescu/Template-Refund-Agent.git
 cd Template-Refund-Agent
 ```
 
